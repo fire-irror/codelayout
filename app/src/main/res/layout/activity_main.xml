@@ -27,4 +27,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="버튼 연습2"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="버튼 연습3"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="버튼 연습4"/>
 </LinearLayout>
