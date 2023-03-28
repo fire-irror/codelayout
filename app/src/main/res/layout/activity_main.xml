@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/greeting"
         android:textSize="30sp"
-        android:textColor="@color/hotpink"
+        android:textColor="@color/btn1"
     />  <!--하나의 클래스 이름-->
     <Button
         android:id="@+id/btn1"
