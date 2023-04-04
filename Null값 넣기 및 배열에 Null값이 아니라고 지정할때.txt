@@ -1,0 +1,25 @@
+fun main() {
+	var myVar : Int =100 //변수 var선언
+    
+    val myVal : Int =100	//상수 val선언  
+    	
+    println(myVar)
+    println(myVal)
+    
+    // myVal = 200 error가 나는 문장
+    var a : Int ="100".toInt()
+    var b : Double ="100.123".toDouble()
+   
+   println(a)
+   println(b)
+   
+   var okNull : Int? = null //?를 붙여야 null값을 사용할 수 있다.
+   println(okNull)
+   
+   
+   //느낌표 2개를 붙이면 null값이 아니라고 표시하는것.
+   var arr = ArrayList<Int>(1)
+   arr!!.add(100) 	//값 100을 추가
+   println(arr)
+   
+}
