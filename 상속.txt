@@ -1,0 +1,92 @@
+상속(inheritance)
+기존 클래스가 가지고 있는 것을 그대로 물려받으면서 필요한 필드나 메소드를 
+추가로 정의하는 것을 의미한다.
+
+   open class Car {	//클래스
+        var color : String = ""
+        var speed : Int = 0
+
+        companion object {	//하나만 할당 되어있고 하나만 불러오기 때문에 class명을 사용 참조형 변수에 불릴 필요가 없다. 
+            var carCount : Int = 0
+            const val MAXSPEED : Int = 200
+            const val MINSPEED : Int = 0
+            fun currentCarCount() : Int {	//carCount를 반환하는 반환타입을 return 타입 다음에 적어주면 된다. 
+                return carCount
+            }
+        }
+        
+        constructor(color: String, speed: Int) {
+            this.color = color
+            this.speed = speed
+            carCount ++
+        }
+        
+        constructor(speed: Int){  	//constructor 생성자	
+            //메소드 오버로딩(한 클래스 내에서 메소드의 이름이 같아도 파라미터의 개수나 데이터 형식만 다르면 여러개를 선언 할 수 있다)
+            this.speed = speed
+        }
+        
+        constructor(){
+            
+        }
+
+       open fun upSpeed(value: Int){
+            if(speed+value >= 200)
+               speed = 200
+            else
+              speed = speed + value
+
+        }
+       
+        fun downSpeed(value: Int){
+            if(speed-value <=0)
+              speed = 0;
+            else
+               speed = speed-value
+        }
+    } 
+
+    class Automobile : Car {
+        var seatNum : Int =0
+       
+        constructor(){
+            fun countSeatNum() : Int{
+                return seatNum
+            }
+        }
+          override fun upSpeed(value: Int){
+        	if(speed+value >= 300)
+        		speed = 300
+       	 	else
+        		speed = speed + value
+        
+    	}
+    }
+    
+  
+    fun main() {
+
+        var myCar1 : Car = Car("빨강",0)	//생성자에서 초기화를 같이함 
+        var myCar2 : Car = Car("파랑",0)
+        var myCar3 : Car = Car("초록",0)
+        var auto : Automobile = Automobile()
+        auto.upSpeed(250)
+        println("승용차의 속도는"+auto.speed+"KM입니다")
+
+		println("생산된 차의 대수(정적 필드) ==>" +Car.carCount)
+        println("생산된 차의 대수(정적 메소드) ==>"+Car.currentCarCount())
+        println("차의 최고 제한 속도 ==>"+Car.MAXSPEED)
+        
+        println("PI의 값 ==> "+Math.PI)
+        println("3의 5제곱 ==> " + Math.pow(3.0,5.0))
+    }
+   
+
+
+    
+    
+    
+    
+    
+    
+      
